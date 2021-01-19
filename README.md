@@ -7,6 +7,7 @@ https://velog.io/@leocodms/1-1-JRE-JDK-JVM-Helloworld
 
 ### 1주차 2차시
 I/O에 관해 최대한 공부하기(파일, 소켓, NIO..)
+https://velog.io/@leocodms/1-2-IO
 
 ### Project
 socket programming - multi thread chatting
