@@ -12,6 +12,7 @@ https://velog.io/@leocodms/1-2-IO
 ### 2주차 1차시
 NIO, Async IO</br>
 https://velog.io/@leocodms/NIO-%EB%B9%84%EB%8F%99%EA%B8%B0AsyncIO
+-> Socket chatting program만들기
 
 ### Project
 socket programming - multi thread chatting
