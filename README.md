@@ -14,5 +14,9 @@ NIO, Async IO</br>
 https://velog.io/@leocodms/NIO-%EB%B9%84%EB%8F%99%EA%B8%B0AsyncIO
 -> Socket chatting program만들기
 
+### 2주차 2차시
+Java Garbage Collection</br>
+https://velog.io/write?id=eaaf8d3b-53ac-4265-a2aa-1badc373cbf0
+
 ### Project
 socket programming - multi thread chatting
