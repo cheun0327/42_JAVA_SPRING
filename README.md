@@ -20,6 +20,7 @@ https://velog.io/write?id=eaaf8d3b-53ac-4265-a2aa-1badc373cbf0
 
 ### 3주차 1차시
 What is Tomcat?
+https://velog.io/write?id=85aca5eb-5695-484c-b437-fdfdcf119c6d
 
 ### Project
 socket programming - multi thread chatting
