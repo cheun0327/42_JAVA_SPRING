@@ -19,14 +19,16 @@ Java Garbage Collection</br>
 https://velog.io/write?id=eaaf8d3b-53ac-4265-a2aa-1badc373cbf0
 
 ### 3주차 1차시
-What is Tomcat?
+What is Tomcat?</br>
 https://velog.io/write?id=85aca5eb-5695-484c-b437-fdfdcf119c6d
 
 ### 3주차 2차시
-42과제
+42과제..
 
 ### 4주차 1차시
 socket programming -> chatting program
+
+
 
 ### Project
 socket programming - multi thread chatting
