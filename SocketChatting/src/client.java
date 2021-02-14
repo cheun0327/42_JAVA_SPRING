@@ -7,8 +7,9 @@ public class client {
 		Socket s = new Socket("localhost", 4567);
 		
 
-		PrintWriter pr = new PrintWriter(s.getOutputStream());
-		pr.println("it works!");
+		OutputStream output = s.getOutputStream();	//서버에 데이터 보내기 위해 outputstream 객체 생
+		PrintWriter pr = new PrintWriter(output);	//printwriter로 outputstream wrapping
+		pr.println("it works!");	
 		pr.flush();
 
 
