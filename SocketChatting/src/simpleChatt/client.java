@@ -14,7 +14,7 @@ public class client {
 
 
 		InputStreamReader in = new InputStreamReader(s.getInputStream());
-		BufferedReader bf = new BufferedReader(in);
+		BufferedReader br = new BufferedReader(in);
 		
 		String str = br.readLine();
 		System.out.println("server: "+str);
