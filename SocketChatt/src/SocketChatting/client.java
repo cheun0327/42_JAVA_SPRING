@@ -17,7 +17,7 @@ public class client {
 		try(SocketChannel socket = SocketChannel.open
 				(new InetSocketAddress("172.30.1.29", 15000))){
 			// 모니터 출력에 출력할 채널 생성
-			WritableByteChannel out = Channel.newChannel(System.out);
+			WritableByteChannel out = Channels.newChannel(System.out);
 			
 			// 버퍼 생성
 			ByteBuffer buf = ByteBuffer.allocate(1024);
@@ -57,18 +57,19 @@ class SystemIn implements Runnable{
 		// 키보드 입력받을 채널과 저장할 버퍼 생
 		ReadableByteChannel in = Channels.newChannel(System.in);
 		ByteBuffer buf = ByteBuffer.allocate(1024);
-	}
-	
-	try {
-		while (true) {
-			// 읽어올 때까지 블로킹 상태로 대
-			in.read(buf);
-			buf.flip();
-			// 입력한 내용을 서버로 출
-			socket.write(buf);
-			buf.clear();
+		
+		try {
+			while (true) {
+				// 읽어올 때까지 블로킹 상태로 대
+				in.read(buf);
+				buf.flip();
+				// 입력한 내용을 서버로 출
+				socket.write(buf);
+				buf.clear();
+			}
 		}
-	}	catch (IOException e) {
-		System.out.println("Cannot Chattt");
+		catch (IOException e) {
+			System.out.println("Cannot Chattt");
+		}
 	}
 }
