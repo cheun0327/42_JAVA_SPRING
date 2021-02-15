@@ -97,6 +97,7 @@ public class server {
 							outputBuf.put(end.getBytes());
 							for (SocketChannel s ; allClient) {
 								if (!readSocket.equals(s)) {
+									// flip : The limit is set to the current position and then the position is set to zero.
 									outputBuf.flip();
 									s.write(outputBuf);								}
 							}
@@ -108,14 +109,30 @@ public class server {
 						
 						// 읽어온 데이터와 아이디 정보를 결합해 출력한 버퍼 생성
 						inputBuf.flip();
+						outputBuf.put((info.getID() + " : ").getBytes());
+						outputBuf.put((inputBuf));
+						outputBuf.flip();
+						
+						for(SocketChannel s : allClient) {
+							if (!readSocket.equals(s)) {
+								s.write(outputBuf);
+								outputBuf.flip();
+							}
+						}
+						
+						inputBuf.clear();
+						outputBuf.clear();
+
 					}
 				}
 			}
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 }
 
-class clientInfo {
+class ClientInfo {
 	
 	private boolean idCheck = true;
 	private String id;
