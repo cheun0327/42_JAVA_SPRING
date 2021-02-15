@@ -95,7 +95,7 @@ public class server {
 							
 							// 자신을 제외한 클라이언트에게 종료 메시지 출력
 							outputBuf.put(end.getBytes());
-							for (SocketChannel s ; allClient) {
+							for (SocketChannel s : allClient) {
 								if (!readSocket.equals(s)) {
 									// flip : The limit is set to the current position and then the position is set to zero.
 									outputBuf.flip();
