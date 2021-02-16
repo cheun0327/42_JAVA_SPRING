@@ -31,7 +31,8 @@ https://velog.io/write?id=85aca5eb-5695-484c-b437-fdfdcf119c6d
 ### 4주차 1차시
 socket programming -> chatting program
 
-
+### 5주차
+BoostCourse Chapter 4.
 
 ### Project
 socket programming - multi thread chatting
