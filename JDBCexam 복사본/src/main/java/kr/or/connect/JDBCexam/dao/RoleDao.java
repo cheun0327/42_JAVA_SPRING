@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import kr.or.connect.JDBCexam.dto.Role;
 
@@ -15,6 +17,42 @@ public class RoleDao {
 	private static String dbUser = "connectuser";
 	private static String dbpasswd = "connect123!@#";
 
+	
+	//GET ALL ROLES
+	public List<Role> getRoles() {
+		List<Role> list = new ArrayList<>();
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		}catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		String sql = "SELECT role_id, description FROM role order by role_id desc";
+		//따로 close 해주지 않아도 된다. auto close
+		try (Connection conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
+				PreparedStatement ps = conn.prepareStatement(sql)){
+			
+			try(ResultSet rs = ps.executeQuery()) {
+				
+				while (rs.next()) {
+					String description = rs.getString(1);
+					int id = rs.getInt("role_id");
+					
+					Role role = new Role(id, description);
+					list.add(role);
+				}
+				
+			}catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		
+		return list;
+	}
+	
 	//INSERT
 	public int addRole(Role role) {
 		int insertCount = 0;	//add count result return
